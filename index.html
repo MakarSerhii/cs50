@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function(){
+            document.querySelector('.correct').addEventListener('click', function() {
+                document.querySelector('.correct').style.backgroundColor = 'green';
+                document.querySelector('#Answer1').innerHTML = 'Answer is correct';
+            });
+            for(let i = 0; i < document.querySelectorAll('.incorrect').length; i++){
+                document.querySelectorAll('.incorrect')[i].addEventListener('click', function() {
+                    document.querySelectorAll('.incorrect')[i].style.backgroundColor = 'red';
+                    document.querySelector('#Answer1').innerHTML = 'Wrong answer';
+            });
+            }
+            
+            document.querySelector('.Answer').addEventListener('click', function() {
+                if(document.querySelector('input').value === '206'){
+                    document.querySelector('input').style.backgroundColor = 'green';
+                    document.querySelector('#Answer2').innerHTML = 'Answer is correct';
+                }
+                else{
+                    document.querySelector('input').style.backgroundColor = 'red';
+                    document.querySelector('#Answer2').innerHTML = 'Wrong answer';
+                }
+            });
+        })
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                    <h3>How much pairs of the cranial nerve the human have?</h3>
+                    <button class="incorrect"> 10 </button>
+                    <button class="incorrect"> 9 </button>
+                    <button class="correct"> 12 </button>
+                    <button class="incorrect"> 13 </button>
+                    <button class="incorrect"> 11 </button>
+                    <p id="Answer1"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>How much bones the adult human skeleton is made of?</h3>
+                    <input placeholder="Answer:" type="text">
+                    <button class="Answer">Submit answer</button>
+                    <p id="Answer2"></p>
+            </div>
+        </div>
+    </body>
+</html>
+
